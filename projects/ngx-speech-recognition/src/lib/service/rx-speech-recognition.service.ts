@@ -135,14 +135,14 @@ export class RxSpeechRecognitionService extends SpeechRecognitionCommon {
 
     const listener = new Observable<SpeechRecognitionServiceEvent>((ovserver) => {
       // create subscriotion
-      const subscriotion = this.proxy$.subscribe({
+      const subscription = this.proxy$.subscribe({
         next: (e) => {
           ovserver.next(e);
 
           if (e.type && e.type === 'end') {
             this.internal.stop();
             ovserver.complete();
-            subscriotion.unsubscribe();
+            subscription.unsubscribe();
           }
         },
         error: (e) => ovserver.error(e),
@@ -153,11 +153,15 @@ export class RxSpeechRecognitionService extends SpeechRecognitionCommon {
 
       return () => {
         this.internal.abort();
-        subscriotion.unsubscribe();
+        subscription.unsubscribe();
       };
     });
 
     return listener;
+  }
+
+  public stopListening() {
+    this.internal.stop();
   }
 
 }
