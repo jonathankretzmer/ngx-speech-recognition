@@ -2,6 +2,7 @@ import { InjectionToken } from '@angular/core';
 
 import {
   SpeechGrammarListType,
+  SpeechRecognitionError
 } from '../adapter';
 
 export const SpeechRecognitionGrammars = new InjectionToken<SpeechGrammarListType>('speech-recognition.grammars');

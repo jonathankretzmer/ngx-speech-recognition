@@ -1,3 +1,6 @@
+import {
+  SpeechRecognitionError
+} from './adapter';
 
 export interface SpeechRecognitionConfig {
   grammars?: SpeechGrammarList;

@@ -54,7 +54,7 @@ export class SpeechRecognitionModule {
     }
   }
 
-  static forRoot(config: SpeechRecognitionConfig): ModuleWithProviders {
+  static forRoot(config: SpeechRecognitionConfig): ModuleWithProviders<SpeechRecognitionModule> {
     return {
       ngModule: SpeechRecognitionModule,
       providers: [
@@ -82,7 +82,7 @@ export class SpeechRecognitionModule {
     };
   }
 
-  static withConfig(config: SpeechRecognitionConfig): ModuleWithProviders {
+  static withConfig(config: SpeechRecognitionConfig): ModuleWithProviders<SpeechRecognitionModule> {
     return {
       ngModule: SpeechRecognitionModule,
       providers: [

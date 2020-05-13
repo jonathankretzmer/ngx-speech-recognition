@@ -1,10 +1,11 @@
 import {
   SpeechGrammarListType,
+  SpeechRecognitionError
 } from '../adapter';
 
 export class SpeechRecognitionCommon {
 
-  protected internal: SpeechRecognition = new SpeechRecognition();
+  protected internal: any = new SpeechRecognition();
 
   constructor(
     protected _grammars: SpeechGrammarListType,

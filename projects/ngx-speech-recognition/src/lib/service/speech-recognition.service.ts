@@ -27,10 +27,12 @@ import {
 
 import {
   SpeechGrammarListType,
+  SpeechRecognitionError
 } from '../adapter';
 
 import {
   SpeechRecognitionCommon,
+
 } from './speech-recognition.common';
 
 // @dynamic
